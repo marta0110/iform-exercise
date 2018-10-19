@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>E-mail</title>
+</head>
+
+<body>
+
+    <form action="receiver.php">
+        <!-- You probably have to add more attributes to the form -->
+
+        <fieldset>
+            <legend> E-mail</legend>
+
+            <input type="submit" value="submit">
+            <div>
+                <span class="required"></span>
+                <label for="name">First name:</label>
+                <input type="text" id="FirstName" name="first_name" placeholder="First name" required minlength="3"
+                    maxlength="10">
+                <span class="correct"></span>
+            </div>
+
+            <div>
+                <span class="required"></span>
+                <label for="name">Last name:</label>
+                <input type="text" id="LastName" name="last_name" placeholder="Last name" required minlength="3"
+                    maxlength="10">
+                <span class="correct"></span>
+            </div>
+            <div>
+                <span class="required"></span>
+                <label for="mail">E-mail:</label>
+                <input type="email" id="mail" name="user_mail" placeholder="e-mail" required>
+                <span class="correct"></span>
+            </div>
+            <div>
+                <span class="required"></span>
+                <label for="mail">Phone:</label>
+                <input type="phone" id="phone" name="user_phone" placeholder="phone" required minlength="5" maxlength="12">
+                <span class="correct"></span>
+            </div>
+            <div>
+                <span class="required"></span>
+                <label for="msg">Message:</label>
+                <textarea id="msg" name="user_message" value="Write your message here"></textarea>
+                <span class="correct"></span>
+            </div>
+            <div>
+                <span> Subscription type</span>
+                <div class="subscription">
+                    <label><input type="radio" name="sub_type" value="free"> Radio</label>
+                    <label><input type="radio" name="sub_type" value="free">Tv</label>
+                    <label><input type="radio" name="sub_type" value="free">Internet</label>
+                </div>
+
+            </div>
+
+        </fieldset>
+
+
+        <style>
+            body {
+                width: 100vw;
+                height: auto;
+                overflow-x: hidden;
+                background-color: #fefefe;
+            }
+
+            div {
+                display: grid;
+
+
+            }
+
+
+            .required:after {
+                content: "*";
+
+            }
+
+            :required {
+                border: 1px solid black;
+            }
+
+
+
+
+
+
+
+
+            input:valid {
+                border: 1px solid black;
+            }
+
+            div input:valid:not(:placeholder-shown)~.correct::after {
+
+                content: "✅";
+
+            }
+
+            div input:invalid:not(:placeholder-shown)~.correct::after {
+
+                content: "this field is required";
+                color: red;
+            }
+
+            fieldset>div {
+                display: contents;
+                border: 1px solid red;
+            }
+
+            fieldset {
+
+                width: 60vw;
+                margin: 0 auto;
+                height: auto;
+                padding: 2vw;
+                display: grid;
+                grid-template-columns: 1fr;
+                background-color: #b4eced;
+                border: 1px solid #b4eced;
+                border-radius: 20px;
+                grid-column-gap: 10px;
+            }
+
+            fieldset>legend {
+                order: 1;
+                background-color: blue;
+            }
+
+            fieldset>input[type="submit"] {
+                order: 8;
+                background-color: red;
+            }
+
+            fieldset>div:nth-of-type(1) {
+                order: 2;
+            }
+
+            fieldset>div:nth-of-type(2) {
+                order: 3;
+            }
+
+            fieldset>div:nth-of-type(3) {
+                order: 4;
+            }
+
+            fieldset>div:nth-of-type(4) {
+                order: 5;
+            }
+
+            fieldset>div:nth-of-type(5) {
+                order: 6;
+            }
+
+            fieldset>div:nth-of-type(6) {
+                order: 7;
+            }
+
+
+
+            fieldset legend {
+                font-family: "Lato", sans-serif;
+                font-weight: 200;
+                font-size: 20px;
+            }
+
+
+
+            h1 {
+                font-family: "Lato", sans-serif;
+                font-weight: 200;
+                font-size: 26px;
+            }
+
+            fieldset label {
+                font-family: "Lato", sans-serif;
+                font-weight: 200;
+                font-size: 16px;
+            }
+
+            fieldset textarea {
+                font-family: "Lato", sans-serif;
+                font-weight: 200;
+                font-size: 16px;
+                padding: 2vw;
+            }
+
+            fieldset label {
+                margin-top: 5px;
+                margin-bottom: 5px;
+            }
+
+            fieldset [submit] {
+                margin-top: 5px;
+                margin-bottom: 5px;
+                background-color: #73b3b5;
+                padding: 5px;
+
+            }
+
+            p {
+                font-family: "Lato", sans-serif;
+                font-weight: 200;
+                font-size: 20px;
+            }
+
+
+
+
+            input[type="submit"]:active~div input {
+                background-color: red;
+            }
+        </style>
+    </form>
+
+
+</body>
+
+</html>
