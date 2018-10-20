@@ -14,49 +14,62 @@
         <!-- You probably have to add more attributes to the form -->
 
         <fieldset>
-            <legend> E-mail</legend>
+            <legend> Sign up</legend>
 
             <input type="submit" value="submit">
             <div>
-                <span class="required"></span>
+
                 <label for="name">First name:</label>
                 <input type="text" id="FirstName" name="first_name" placeholder="First name" required minlength="3"
                     maxlength="10">
+                <span class="required"></span>
                 <span class="correct"></span>
             </div>
 
             <div>
-                <span class="required"></span>
+
                 <label for="name">Last name:</label>
                 <input type="text" id="LastName" name="last_name" placeholder="Last name" required minlength="3"
                     maxlength="10">
+                <span class="required"></span>
                 <span class="correct"></span>
             </div>
             <div>
-                <span class="required"></span>
+
                 <label for="mail">E-mail:</label>
                 <input type="email" id="mail" name="user_mail" placeholder="e-mail" required>
+                <span class="required"></span>
                 <span class="correct"></span>
             </div>
             <div>
-                <span class="required"></span>
+
                 <label for="mail">Phone:</label>
                 <input type="phone" id="phone" name="user_phone" placeholder="phone" required minlength="5" maxlength="12">
-                <span class="correct"></span>
-            </div>
-            <div>
                 <span class="required"></span>
-                <label for="msg">Message:</label>
-                <textarea id="msg" name="user_message" value="Write your message here"></textarea>
                 <span class="correct"></span>
             </div>
             <div>
-                <span> Subscription type</span>
+
+                <label for="msg">Message:</label>
+                <textarea id="msg" name="user_message" value="Write your message here" minlength="30" maxlength="250"
+                    required></textarea>
+                <span class="required"></span>
+                <span class="correct"></span>
+            </div>
+            <div>
+
                 <div class="subscription">
-                    <label><input type="radio" name="sub_type" value="free"> Radio</label>
-                    <label><input type="radio" name="sub_type" value="free">Tv</label>
-                    <label><input type="radio" name="sub_type" value="free">Internet</label>
+                    <span> Subscription type:</span>
+                    <label><input type="radio" name="sub_type" value="free"> Free </label>
+                    <label><input type="radio" name="sub_type" value="free">Cheap</label>
+                    <label><input type="radio" name="sub_type" value="free">Expensive</label>
                 </div>
+
+            </div>
+
+            <div class="terms">
+                <input type="checkbox" id="terms" name="terms" required> <label for="terms"> Agree for terms and
+                    conditions</label>
 
             </div>
 
@@ -80,6 +93,7 @@
 
             .required:after {
                 content: "*";
+                color: red;
 
             }
 
@@ -110,13 +124,10 @@
                 color: red;
             }
 
-            fieldset>div {
-                display: contents;
-                border: 1px solid red;
-            }
+
+
 
             fieldset {
-
                 width: 60vw;
                 margin: 0 auto;
                 height: auto;
@@ -127,16 +138,88 @@
                 border: 1px solid #b4eced;
                 border-radius: 20px;
                 grid-column-gap: 10px;
+                justify-content: start;
+                position: relative;
+                padding-bottom: 10vw;
+            }
+
+            fieldset>div {
+                display: grid;
+                grid-template: auto/repeat(4, auto);
+                padding-bottom: 10px;
+                margin: 0;
+                justify-content: start;
+                width: 300px;
+            }
+
+
+
+            fieldset>div label {
+                min-width: 15vw;
+            }
+
+            fieldset>div input {
+                min-width: 20vw;
+                max-width: 20vw;
+            }
+
+            fieldset>div textarea {
+                min-width: 20vw;
+                max-width: 20vw;
+            }
+
+            fieldset>div .correct {
+                min-width: 20vw;
+                max-width: 20vw;
+            }
+
+            fieldset>div .subscription span {
+                font-family: "Lato", sans-serif;
+                font-weight: 200;
+                font-size: 16px;
+                padding: 5px;
+            }
+
+            fieldset>div .subscription {
+                display: grid;
+                grid-template-columns: 1fr;
+            }
+
+            fieldset>.terms label {
+                grid-column-start: 2;
+                grid-column-end: 4;
+
+            }
+
+            fieldset>.terms {
+                padding: 5px;
             }
 
             fieldset>legend {
                 order: 1;
-                background-color: blue;
             }
 
             fieldset>input[type="submit"] {
                 order: 8;
-                background-color: red;
+                border-radius: 8px;
+                padding: 10px;
+                background-color: turquoise;
+                border: 1px solid turquoise;
+                color: white;
+                grid-column-start: 2;
+                grid-column-end: 4;
+                cursor: pointer;
+                position: absolute;
+                padding: 10px;
+                width: 80px;
+                height: auto;
+                left: 20vw;
+                bottom: 3vw;
+            }
+
+            fieldset>input[type="submit"]:hover {
+                background-color: rgb(49, 184, 170);
+                border: 1px solid rgb(49, 184, 170);
             }
 
             fieldset>div:nth-of-type(1) {
